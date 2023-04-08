@@ -1,0 +1,180 @@
+@media all and (min-width: 870px) {
+  .profile {
+    margin: 0 10% !important;
+  }
+}
+
+@media all and (min-width: 1180px) {
+  .profile {
+    margin: 0 20% !important;
+  }
+}
+
+@media all and (max-width: 300px) {
+  .profile {
+    margin: 0%;
+    min-width: 300px;
+  }
+}
+
+.container {
+  max-width: 90%;
+}
+
+.profile-pic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
+.profile-pic-div {
+  width: 8rem !important;
+  height: 8rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.align-end {
+  align-content: flex-end;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.star {
+  margin: 0 0.2rem;
+}
+
+.name {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0.25rem 0;
+}
+
+.side-name {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0.25rem 0;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.side-description {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.star-div {
+  display: flex;
+  align-items: center;
+  margin: 0.75rem 0;
+  width: fit-content;
+}
+
+.rating-name {
+  margin-left: 0.5rem;
+  font-weight: 700;
+}
+
+.small-rating-name {
+  margin-left: 0.5rem;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.blue {
+  color: #4682b4;
+}
+
+.rate {
+  font-weight: 700;
+  font-size: 1.5rem;
+  width: max-content;
+  padding: 1rem 0;
+}
+
+.side-rate {
+  font-weight: 700;
+  font-size: 20px;
+  width: max-content;
+  /* padding: 1rem 0; */
+}
+
+.hire {
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  width: 12rem;
+  height: 3rem;
+  border-radius: 25px / 50%;
+  margin: 1rem 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.name-creds {
+  width: min-content;
+  margin: 1rem;
+}
+
+.disp-flex {
+  display: flex;
+}
+
+.rate-button {
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.side-profile {
+  position: fixed;
+  top: 10%;
+  right: 0%;
+  width: fit-content;
+}
+
+.card-side-profile {
+  width: fit-content !important;
+}
+
+.side-profile-pic-div {
+  width: 5rem !important;
+  height: 5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  align-items: center;
+  margin: 0.5rem;
+  margin-left: 1rem;
+}
