@@ -49,9 +49,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(windowDimensions);
-    console.log(scrollTop);
-    console.log(sideProfile);
     if (
       windowDimensions.width > 800 &&
       scrollTop >= 255 &&
