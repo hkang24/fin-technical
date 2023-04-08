@@ -1,5 +1,5 @@
 
-Hi! I deployed the web-app to the heroku url: 
+Hi! I deployed the web-app to the netlify url: https://master--leafy-liger-4606f2.netlify.app/
 
 However, if there's an issue with the deployment, please email me or you can run it on your local machine by opening it up on vsCode, typing (and entering) 'npm install' in the terminal, and typing (and entering) 'npm start' in the terminal. This should show you the live development server where you can see the web app!
 
