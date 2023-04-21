@@ -86,7 +86,7 @@ const Profile = React.forwardRef((props, ref) => {
                 <StarRating rating={props.data[0].pubRating}></StarRating>
               </div>
             </div>
-            <div className="d-flex rate-button justify-content-between align-items-end m-0 mt-1">
+            <div className="d-flex rate-button justify-content-between align-items-start m-0 mt-1">
               <span className="rate blue p-0">
                 {"$" + props.data[0].ratePerArticle + " / Article"}
               </span>
