@@ -59,7 +59,7 @@ function App() {
     <div className="d-flex flex-column">
       <NavBar className="nav"/>
       <div className="shift-down">
-        <Profile ref = {lastPageRef} data={data} />
+        <Profile ref = {lastPageRef} data={data} width = {windowDimensions.width > 700}/>
         <hr />
         <Body
               about={data[0].about}

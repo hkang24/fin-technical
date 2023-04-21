@@ -18,15 +18,15 @@
   }
 }
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 700px) {
   .shift-down {
     margin-top: 3rem;
   }
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 700px) {
   .shift-down {
-    margin-top: 8rem;
+    margin-top: 9rem;
   }
 }
 
@@ -226,4 +226,8 @@ h3 {
     width: 12rem;
     height: 3rem;
     border-radius: 25px / 50%;
+}
+
+.small-width-profile {
+  align-items: left !important;
 }
