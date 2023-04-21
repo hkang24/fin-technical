@@ -7,29 +7,17 @@ import data from "./Data";
 import Body from "./Components/Body";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useRef } from "react";
+import { useRef, useCallback} from "react";
 import SideProfile from "./Components/SideProfile/SideProfile";
 
 function App() {
-  const elementRef = useRef(null);
-
-  const [scrollTop, setScrollTop] = useState(0);
   const [sideProfile, setSideProfile] = useState(false);
+  const observer = useRef();
+
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   );
 
-  useEffect(() => {
-    const handleScroll = (event) => {
-      setScrollTop(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -48,40 +36,48 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    if (
-      windowDimensions.width > 800 &&
-      scrollTop >= 255 &&
-      sideProfile == false
-    ) {
-      setSideProfile(true);
-    } else if (windowDimensions.width <= 800 && sideProfile == true) {
-      setSideProfile(false);
-    } else if (scrollTop < 150 && sideProfile == true) {
-      setSideProfile(false);
-    }
-  }, [scrollTop, windowDimensions]);
+  const lastPageRef = useCallback((node) => {
+    // console.log("useCallBack called");
+    if (observer.current) observer.current.disconnect();
+    observer.current = new IntersectionObserver((entries) => {
+      console.log("entry:" + entries[0]);
+      if (entries[0].isIntersecting) {
+        // console.log("not intersecting");
+        setSideProfile(false);
+      } else if (!entries[0].isIntersecting && windowDimensions.width > 1070) {
+        // console.log("intersecting");
+        setSideProfile(true);
+      } else if (!entries[0].isIntersecting && windowDimensions.width <= 1070) {
+        // console.log("intersecting");
+        setSideProfile(false);
+      }
+    });
+    if (node) observer.current.observe(node);
+  });
 
   return (
-    <div>
+    <div className="d-flex flex-column">
       <NavBar />
-      <div className="mt-5">
-        <Profile data={data} />
+      <div>
+        <Profile ref = {lastPageRef} data={data} />
         <hr />
-        {sideProfile && (
-          <SideProfile
-            rating={data[0].pubRating}
-            user={data[0].user}
-            credentials={data[0].credentials}
-            rate={data[0].ratePerArticle}
-          />
-        )}
         <Body
-          about={data[0].about}
-          credentials={data[0].credentials}
-          publications={data[0].publications}
-          rating={data[0].pubRating}
-        />
+              about={data[0].about}
+              credentials={data[0].credentials}
+              publications={data[0].publications}
+              rating={data[0].pubRating}
+              visible = {sideProfile}
+              width = {windowDimensions.width > 500}
+            />
+        {sideProfile && (
+            <SideProfile
+              rating={data[0].pubRating}
+              user={data[0].user}
+              credentials={data[0].credentials}
+              rate={data[0].ratePerArticle}
+              ref = {lastPageRef}
+            />
+        )}
       </div>
     </div>
   );

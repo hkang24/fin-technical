@@ -3,7 +3,7 @@ import Logo from "./Logo.js"
 
 function NavBar() {
   return (
-    <nav className="nav fixed-top nav-back">
+    <nav className="nav nav-back">
     <Logo/>
       <div className="navLinkGroup">
         <a className="navLink expert ">Find an Expert</a>

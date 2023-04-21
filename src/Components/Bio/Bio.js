@@ -5,7 +5,7 @@ import Publications from "./Publications";
 
 function Bio(props) {
     return (
-      <div className="bio">
+      <div className="">
           <About about = {props.about}/>
           <Education credentials = {props.credentials}/>
           <Publications publications = {props.publications}/>

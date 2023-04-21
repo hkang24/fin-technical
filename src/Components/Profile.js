@@ -5,12 +5,21 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import React from "react";
+import { useRef, useState } from "react";
+import { Card } from "react-bootstrap";
 
+const Profile = React.forwardRef((props, ref) => {
 
-function Profile(props) {
+  const [overlay, setOverlay] = useState(false);
+
+  function handleBtn() {
+    setOverlay(!overlay);
+    console.log("button clicked")
+  }
+
   return (
-    // <Container className="container-fluid profile d-flex justify-content-center">
-    <div className="profile">
+    <div ref = {ref} className="profile">
       <div className="d-flex container-fluid align-items-center justify-content-between">
         <div className="disp-flex flex-row">
           <div className="profile-pic-div">
@@ -35,11 +44,20 @@ function Profile(props) {
           <span className="rate blue">
             {"$" + props.data[0].ratePerArticle + " / Article"}
           </span>
-          <button className="hire">Hire</button>
+          <button onClick={handleBtn} className="hire">Hire</button>
         </div>
       </div>
+      {overlay && (
+        <div className="overlay-div">
+          <Card className= "button-card">
+            <p>Hiring functionality not done yet!</p>
+            <button onClick={handleBtn} className="card-button">Click to Exit</button>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }
+);
 
 export default Profile;

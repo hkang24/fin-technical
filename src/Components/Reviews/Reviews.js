@@ -6,7 +6,7 @@ import Review from "./Review";
 
 function Reviews(props) {
   return (
-    <div className="bio articles">
+    <div className="articles">
       <div className="sections">
         <Row className="d-flex flew-row justify-content-between">
           <div className="d-flex flex-row align-items-center review-one-width">
@@ -18,9 +18,9 @@ function Reviews(props) {
               <Dropdown/>
           </div>
         </Row>
-        <Review/>
-        <Review/>
-        <Review/>
+        <Review width = {props.width}/>
+        <Review width = {props.width}/>
+        <Review width = {props.width}/>
       </div>
     </div>
   );

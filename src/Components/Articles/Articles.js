@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 
 function Articles(props) {
   return (
-    <div className="bio articles">
+    <div className="articles">
       <div className="sections">
         <h2>Reviewed Articles</h2>
         <div className="d-flex flex-row">

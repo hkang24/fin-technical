@@ -1,19 +1,20 @@
-@media all and (min-width: 870px) {
+
+
+
+.profile {
+  margin: 0 10%;
+  min-width: 300px;
+}
+
+@media all and (min-width: 1070px) {
   .profile {
     margin: 0 10% !important;
   }
 }
 
-@media all and (min-width: 1180px) {
+@media all and (min-width: 1220px) {
   .profile {
     margin: 0 20% !important;
-  }
-}
-
-@media all and (max-width: 300px) {
-  .profile {
-    margin: 0%;
-    min-width: 300px;
   }
 }
 
@@ -177,4 +178,40 @@ h3 {
   align-items: center;
   margin: 0.5rem;
   margin-left: 1rem;
+}
+
+.overlay-div {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-card {
+  width: 20% !important;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5% 3%;
+}
+
+.card-button {
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    width: 12rem;
+    height: 3rem;
+    border-radius: 25px / 50%;
 }

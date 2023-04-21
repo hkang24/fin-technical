@@ -1,8 +1,18 @@
 import "../Profile.css";
 import { Card } from "react-bootstrap";
 import StarRatingSmall from "../StartRatingSmall";
+import React from "react";
+import { useState } from "react";
 
 function SideProfile(props) {
+
+  const [overlay, setOverlay] = useState(false);
+
+  function handleBtn() {
+    setOverlay(!overlay);
+    console.log("button clicked")
+  }
+
   return (
     <div className="side-profile">
       <Card className="card-side-profile p-3">
@@ -32,9 +42,17 @@ function SideProfile(props) {
           <span className="side-rate blue">
             {"$" + props.rate + " / Article"}
           </span>
-          <button className="hire full-width">Hire</button>
+          <button onClick= {handleBtn} className="hire full-width">Hire</button>
         </div>
       </Card>
+      {overlay && (
+        <div className="overlay-div">
+          <Card className= "button-card">
+            <p>Hiring functionality not done yet!</p>
+            <button onClick={handleBtn} className="card-button">Click to Exit</button>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }
