@@ -1,9 +1,9 @@
-import logo from "./logo.svg";
+
 import "./App.css";
+import "./Components/Profile.css";
 import NavBar from "./Components/Navbar";
 import Profile from "./Components/Profile";
 import data from "./Data";
-// import Bio from './Components/Bio/Bio';
 import Body from "./Components/Body";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -57,8 +57,8 @@ function App() {
 
   return (
     <div className="d-flex flex-column">
-      <NavBar />
-      <div>
+      <NavBar className="nav"/>
+      <div className="shift-down">
         <Profile ref = {lastPageRef} data={data} />
         <hr />
         <Body

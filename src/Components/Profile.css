@@ -18,6 +18,18 @@
   }
 }
 
+@media all and (min-width: 600px) {
+  .shift-down {
+    margin-top: 3rem;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .shift-down {
+    margin-top: 8rem;
+  }
+}
+
 .container {
   max-width: 90%;
 }

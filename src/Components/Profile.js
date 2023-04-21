@@ -1,12 +1,9 @@
 import "./Profile.css";
 import StarRating from "./StarRating";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import React from "react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Card } from "react-bootstrap";
 
 const Profile = React.forwardRef((props, ref) => {
