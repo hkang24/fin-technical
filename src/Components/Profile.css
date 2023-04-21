@@ -196,13 +196,13 @@ h3 {
 }
 
 .button-card {
-  width: 20% !important;
+  width: 16rem !important;
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
   justify-content: center;
   align-items: center;
-  padding: 1.5% 3%;
+  padding: 1.5rem;
 }
 
 .card-button {
